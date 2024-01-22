@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather?";
+
 const apiKey = "3c55d79ad6bcde2f6f031ce795914e1c";
 
 function WeatherComponent() {
@@ -12,7 +13,6 @@ function WeatherComponent() {
       setCurrentTime(new Date());
     }, 1000);
 
-    // Clean up the interval on component unmount
     return () => {
       clearInterval(timer);
     };
@@ -26,7 +26,8 @@ function WeatherComponent() {
   }, []);
 
   if (!weatherData) {
-    return <div>Loading...</div>;
+    return <div className='loading'>Yuklanmoqda... </div>;
+    <img src="" alt="" />
   }
 
   const { main, weather, wind, name } = weatherData;
@@ -39,7 +40,6 @@ function WeatherComponent() {
       <div className="weather__box">
         <div className="address__info">
           <h1 className='addres__title'>{name}</h1>
-          {/* <b className='address__text address__one'>{description}</b> */}
           <p className='address__text'>{currentTime.toLocaleTimeString()}</p>
           <div id="txt"></div>
         </div>
@@ -47,8 +47,6 @@ function WeatherComponent() {
           <h1 className='temprature__title'>{Math.round(temp - 273.15)} ℃</h1>
         </div>
         <div className="wind__speed">
-          {/* <p className='wind__text'>Namlik: {humidity}%</p>
-          <p className='wind__text'>Shamol: {speed} m/s</p> */}
           <p className='wind__text'>Yuqori tezlik: {gust} m/s</p>
           <p className='wind__text'>Past tezlik: {gust} m/s</p>
         </div>

@@ -16,7 +16,7 @@ body{
 .weather__box{
     width: 100%;
     height: 300px;
-    background-color: rgba(0, 0, 0, 0.33);
+    background-color: rgba(0, 0, 0, 0.222);
     border: 1px solid rgba(0, 0, 0, 0.175);
     border-radius: 5px;
     box-shadow: inset;
@@ -43,24 +43,21 @@ body{
 
 .address__info{
     margin-left: 30px;
-        /* margin-top: 30px; */
+        margin-top: 30px;
 }
 
 .wind__speed{
     margin-right: 30px;
-    /* margin-top: 30px; */
+    margin-top: 30px;
 }
 
 .address__text{
+    font-size: 60px;
+}
+.addres__title{
     font-size: 50px;
 }
 
 .wind__text{
     font-size: 40px;
-}
-
-.addres__title{
-    font-size: 50px;
-    /* color: rgb(11, 12, 12); */
-
 }
